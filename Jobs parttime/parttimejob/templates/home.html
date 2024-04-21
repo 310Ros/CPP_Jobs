@@ -51,7 +51,7 @@ Homepage{% endblock%}
                 <p class="card-text"><strong>Contact Information:</strong> {{ post.contact_information }}</p>
                 {% if regtype == "job_seeker" %}
                 <a class="btn btn-primary px-4 me-md-2" href="{% url 'applyjob' post.id %}" role="button">Apply</a>
-                {
+            
                 {% endif %}
                 {% if regtype == "job_provider" %}
                 <div class="d-flex justify-content-between">
