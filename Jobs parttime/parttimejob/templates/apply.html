@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block booking %}
+
+<div class="box">
+  <h1>Apply </h1>
+  <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="hidden" name="job_id" value="{{ job.id }}">
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-control" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" name="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Your Phone Number</label>
+        <input type="tel" name="phone" class="form-control" id="phone" required>
+      </div>
+      <div class="mb-3">
+        <label for="resume" class="form-label">Upload Resume</label>
+        <input type="file" name="resume" class="form-control" id="resume" accept=".pdf,.doc,.docx">
+      </div>
+    
+      <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Apply</button>
+  </form>
+</div>
+{% endblock  %}

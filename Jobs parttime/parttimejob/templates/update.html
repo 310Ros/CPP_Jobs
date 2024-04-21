@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block update %}
+
+<div class="box">
+    <h1>Update Job Post</h1>
+    <form method="POST" enctype="multipart/form-data" action="{% url 'update_job' job.id %}">
+        {% csrf_token %}
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="title">Job Title</label>
+            <input type="text" name="title" class="form-control" value="{{ job.title }}">
+        </div>
+        
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="description">Job Description</label>
+            <textarea name="description" class="form-control">{{ job.description }}</textarea>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="requirements">Requirements</label>
+            <textarea name="requirements" class="form-control">{{ job.requirements }}</textarea>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="salary">Salary</label>
+            <input type="number" name="salary" class="form-control" value="{{ job.salary }}">
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="address">Address</label>
+            <input type="text" name="address" class="form-control" value="{{ job.address }}">
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="contact_information">Contact Information</label>
+            <input type="text" name="contact_information" class="form-control" value="{{ job.contact_information }}">
+        </div>
+        
+        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+    </form>
+</div>
+
+{% endblock %}

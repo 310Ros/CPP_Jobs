@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block dashboard %}
+<h1>Welcome to Your Dashboard</h1>
+    <h2>Your Bookings:</h2>
+{% for job in bookings %}
+
+<div class="booking">
+
+    <div class="booking-details">
+        <div>
+            <h3>{{ job.job.title }}</h3>
+            <p><strong>Job ID:</strong> {{ job.job_id }}</p>
+            <p><strong>Description:</strong> {{ job.job.description }}</p>
+            <p><strong>Requirements:</strong> {{ job.job.requirements }}</p>
+            <p><strong>Salary:</strong> {{ job.job.salary }}</p>
+            <p><strong>Address:</strong> {{ job.job.address }}</p>
+            <p><strong>Contact Information:</strong> {{ job.job.contact_information }}</p>
+            <p><strong>Status:</strong> {{ status }}</p>
+        </div>
+
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

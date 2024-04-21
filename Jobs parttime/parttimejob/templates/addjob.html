@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block addservice %}
+<div class="box">
+    <h1>Add Job Post</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="job_id" value="{{ job_id }}">
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="title">Job Title</label>
+            <input type="text" name="title" class="form-control" />
+        </div>
+        
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="description">Job Description</label>
+            <textarea name="description" class="form-control"></textarea>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="requirements">Requirements</label>
+            <textarea name="requirements" class="form-control"></textarea>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="salary">Salary</label>
+            <input type="number" name="salary" class="form-control" />
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="address">Address</label>
+            <input type="text" name="address" class="form-control" />
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="contact_information">Contact Information</label>
+            <input type="text" name="contact_information" class="form-control" />
+        </div>
+        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Post</button>
+    </form>
+</div>
+{% endblock %}

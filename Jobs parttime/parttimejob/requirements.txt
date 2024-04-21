@@ -1,0 +1,7 @@
+Django==3.2.18
+PyMySQL==1.0.3
+pytz==2023.2
+django-request==1.6.2
+boto3
+Apply-Text==0.0.1
+psycopg2-binary==2.9.9
