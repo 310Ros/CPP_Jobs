@@ -132,7 +132,7 @@ def applyjob(request, job_id):
             )
 
             # Send SNS notification
-            topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:JobAlerts'
+            # topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:JobAlerts'
             
            
             subjectToSend = 'Job Application Received'
