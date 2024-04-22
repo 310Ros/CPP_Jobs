@@ -135,26 +135,26 @@ def applyjob(request, job_id):
             # topicOfArn = 'arn:aws:sns:eu-west-1:250738637992:JobAlerts'
             
            
-            subjectToSend = 'Job Application Received'
-            messageToSend = f'A new application has been received for the job: {job.title}'
-            AWS_REGION = 'eu-west-1'
-            sns_client = boto3.client('sns', region_name=AWS_REGION)
-            response = sns_client.publish(
-                TopicArn=topicOfArn,
-                Message=messageToSend,
-                Subject=subjectToSend,
-            )
-            print(response)
+        #     subjectToSend = 'Job Application Received'
+        #     messageToSend = f'A new application has been received for the job: {job.title}'
+        #     AWS_REGION = 'eu-west-1'
+        #     sns_client = boto3.client('sns', region_name=AWS_REGION)
+        #     response = sns_client.publish(
+        #         TopicArn=topicOfArn,
+        #         Message=messageToSend,
+        #         Subject=subjectToSend,
+        #     )
+        #     print(response)
 
-            messages.success(request, "Application submitted successfully.")
-            return redirect('home')
-        except ObjectDoesNotExist:
-            messages.error(request, "The job you are applying for does not exist.")
-            return redirect('home')
-        except Exception as e:
-            messages.error(request, "An error occurred while sending the SNS notification.")
-            print("SNS Error:", e)
-            return redirect('home')
+        #     messages.success(request, "Application submitted successfully.")
+        #     return redirect('home')
+        # except ObjectDoesNotExist:
+        #     messages.error(request, "The job you are applying for does not exist.")
+        #     return redirect('home')
+        # except Exception as e:
+        #     messages.error(request, "An error occurred while sending the SNS notification.")
+        #     print("SNS Error:", e)
+        #     return redirect('home')
 
     else:
         # Pass the job_id to the template context
